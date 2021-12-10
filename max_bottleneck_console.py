@@ -9,13 +9,13 @@ def read_file():
             return graphs
         matrix = [ [ 0 for i in range(vertex+1)] for j in range(vertex+1)]
         for _ in range(edge):
-            data = input().readline().split(' ')
+            data = input().split(' ')
             start = int(data[0])
             end = int(data[1])
             weight = int(data[2])
             matrix[start][end] = weight
             matrix[end][start] = weight
-        data = input().readline().split(' ')
+        data = input().split(' ')
         graphs[index] = {}
         graphs[index]['vertex'] = vertex
         graphs[index]['edge'] = edge
