@@ -1,21 +1,22 @@
+import sys
 def read_file():
     graphs = {}
     index = 0
     while True:
-        data = input().split(' ')
+        data = sys.stdin.readline().strip().split(' ')
         vertex = int(data[0])
         edge = int(data[1])
         if vertex == 0 or edge == 0:
             return graphs
         matrix = [ [ 0 for i in range(vertex+1)] for j in range(vertex+1)]
         for _ in range(edge):
-            data = input().split(' ')
+            data = sys.stdin.readline().strip().split(' ')
             start = int(data[0])
             end = int(data[1])
             weight = int(data[2])
             matrix[start][end] = weight
             matrix[end][start] = weight
-        data = input().split(' ')
+        data = sys.stdin.readline().strip().split(' ')
         graphs[index] = {}
         graphs[index]['vertex'] = vertex
         graphs[index]['edge'] = edge
@@ -44,9 +45,8 @@ def main():
     for i,_ in enumerate(graphs):
         scenario_number = i+1
         solution = solve_max_bottleneck(graphs[i])
-        print(f'Scenario #{scenario_number}')
-        print(f'Minimum Number of Trips = {solution}\n')
+        print('Scenario #' + str(scenario_number))
+        print('Minimum Number of Trips = ' + str(solution) + '\n')
 
 if __name__ == '__main__':
-    #timeit.timeit('main()', number=1)
     main()

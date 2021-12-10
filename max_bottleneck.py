@@ -49,5 +49,4 @@ def main():
         print(f'Minimum Number of Trips = {solution}\n')
 
 if __name__ == '__main__':
-    #timeit.timeit('main()', number=1)
     main()
