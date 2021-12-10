@@ -34,7 +34,7 @@ def solve_max_bottleneck(graph):
     weight = dp[graph['start']][graph['end']]
     i = 0
     while True:
-        if i*(weight - 1) > graph['tourists']:
+        if i*(weight - 1) >= graph['tourists']:
             return i
         i += 1
 
